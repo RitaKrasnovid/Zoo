@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { ListAnimalsComponent } from './list-animals/list-animals.component';
+import { AnimalsListComponent } from './animals-list/animals-list.component';
 import { AnimalComponent } from './animal/animal.component';
 import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
-  { path: '*', component: ListAnimalsComponent },
+  { path: '*', component: AnimalsListComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListAnimalsComponent,
+    AnimalsListComponent,
     AnimalComponent
   ],
   imports: [

@@ -9,7 +9,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(apiItem: string) {
-    return this.http.get(this.baseURL + apiItem, {responseType: 'json'});
+  getAnimals() {
+    const url = this.baseURL + 'animals';
+    return this.http.get(url, {responseType: 'json'});
   }
 }
