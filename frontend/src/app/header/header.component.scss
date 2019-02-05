@@ -1,0 +1,68 @@
+@import '../../assets/styles/variables';
+
+.app-header {
+  width: 100%;
+  height: 100px;
+
+  &__call-button {
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+    text-decoration: none;
+    color: $font-primary-color;
+    text-align: center;
+    &:hover {
+      background: $secondary-color;
+      color: $font-secondary-color;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70px;
+    background: url('../../assets/image/header-menu.png') no-repeat;
+    background-position: left -100px top 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+    &--nav-home{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__logo {
+    height: 70px;
+    width: 70px;
+    margin-left: 30px;
+    background: url('../../assets/image/favicon.png') no-repeat;
+    background-size: cover;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    list-style-type: none;
+    margin-right: 30px;
+  }
+
+  &__item {
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $font-primary-color;
+
+    &:hover{
+      color: $font-secondary-color;
+    }
+  }
+}

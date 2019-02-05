@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnimalsListComponent } from './animals-list/animals-list.component';
 import { AnimalComponent } from './animal/animal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   { path: '*', component: AnimalsListComponent },
@@ -15,7 +16,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AnimalsListComponent,
-    AnimalComponent
+    AnimalComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
