@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     AnimalComponent,
     HomeComponent,
     CommonNewsComponent,
-    ScheduleComponent
+    ScheduleComponent,
     HeaderComponent
   ],
   imports: [

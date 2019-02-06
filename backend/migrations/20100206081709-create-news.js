@@ -1,6 +1,6 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Animals', {
+    return queryInterface.createTable('News', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,12 +11,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      description: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       image_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Images',
-          key: 'id',
-        },
+        type: Sequelize.ENUM(Sequelize.INTEGER),
       },
       createdAt: {
         allowNull: false,
@@ -29,6 +29,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Animals');
+    return queryInterface.dropTable('News');
   },
 };
