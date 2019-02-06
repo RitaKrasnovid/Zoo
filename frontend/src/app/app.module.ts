@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CommonNewsComponent } from './home/common-news/common-news.component';
 import { ScheduleComponent } from './home/schedule/schedule.component';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   { path: '*', component: AnimalsListComponent },
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
     HomeComponent,
     CommonNewsComponent,
     ScheduleComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
