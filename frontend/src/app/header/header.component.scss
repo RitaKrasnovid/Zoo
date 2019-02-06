@@ -2,18 +2,20 @@
 
 .app-header {
   width: 100%;
-  height: 100px;
+  height: 120px;
 
   &__call-button {
     margin: 0 auto;
     display: block;
     width: 150px;
+    height: 35px;
     text-decoration: none;
     color: $font-primary-color;
     text-align: center;
+    line-height: 35px;
     &:hover {
       background: $secondary-color;
-      color: $font-secondary-color;
+      color: #ff8040;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
   }
@@ -31,6 +33,8 @@
       display: block;
       width: 100%;
       height: 100%;
+      text-decoration: none;
+      color: $font-primary-color;
     }
   }
   &__logo {
@@ -62,7 +66,7 @@
     color: $font-primary-color;
 
     &:hover{
-      color: $font-secondary-color;
+      color: #ff8040;
     }
   }
 }
