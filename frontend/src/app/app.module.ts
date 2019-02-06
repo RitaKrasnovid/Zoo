@@ -6,6 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnimalsListComponent } from './animals-list/animals-list.component';
 import { AnimalComponent } from './animal/animal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { CommonNewsComponent } from './home/common-news/common-news.component';
+import { ScheduleComponent } from './home/schedule/schedule.component';
 
 const appRoutes: Routes = [
   { path: '*', component: AnimalsListComponent },
@@ -15,7 +18,10 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AnimalsListComponent,
-    AnimalComponent
+    AnimalComponent,
+    HomeComponent,
+    CommonNewsComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
