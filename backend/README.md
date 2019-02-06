@@ -1,6 +1,6 @@
 # Backend
 
-Establish Sequelize CLI `npm install --save sequelize-cli`
+Establish Sequelize CLI `npm install -g sequelize-cli`
 
 ## How to run
 

@@ -11,17 +11,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    image_id: {
-      type: DataTypes.ENUM(DataTypes.INTEGER),
-    },
   }, {});
 
   News.associate = (models) => {
-    News.hasMany(models.Image, {
-      as: 'image',
-      foreignKey: {
-        field: 'image_id',
-      },
+    News.belongsToMany(models.Images, {
+      through: 'NewsImages',
+      as: 'images',
+      foreignKey: 'newsId',
     });
   };
 

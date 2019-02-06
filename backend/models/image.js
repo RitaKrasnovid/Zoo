@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       primaryKey: true,
       validate: {
-        len: [0, 255],
+        len: [0, 100],
       },
     },
     data: {
@@ -14,10 +14,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Image.associate = (models) => {
-    // Image.belongTo(models.News, {
-    //   as: 'news',
-    //   onDelete: 'CASCADE',
-    // });
+    Image.belongsToMany(models.News, {
+      through: 'NewsImages',
+      as: 'news',
+      foreignKey: 'imageId',
+    });
   };
 
   return Image;

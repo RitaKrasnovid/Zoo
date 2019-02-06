@@ -1,6 +1,7 @@
 const models = require('../models');
 
 const News = models.news;
+const Image = models.image;
 
 const create = (req, res) => {
   return News
@@ -13,10 +14,20 @@ const create = (req, res) => {
     .catch(error => res.status(400).send(error));
 };
 
+// const list = (req, res, next) => News
+//   .findAll()
+//   .then(result => res.status(200).send(result))
+//   .catch(error => next(error));
 const list = (req, res, next) => News
-  .findAll()
-  .then(result => res.status(200).send(result))
-  .catch(error => next(error));
+  .find({
+    include: [{
+      model: Image,
+      as: 'image',
+      required: false,
+      attributes: ['id', 'title'],
+      through: { attributes: [] },
+    }],
+  });
 
 module.exports = {
   create,
