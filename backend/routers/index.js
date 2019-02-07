@@ -9,5 +9,6 @@ module.exports = (app) => {
   app.get('/api/animals', animalsController.list);
   app.post('/api/animals', (req, res) => animalsController.create);
 
-  app.get('/api/news', newsController.list);
+  app.get('/api/news/', newsController.list);
+  app.get('/api/news/main', newsController.getMainNews);
 };

@@ -15,9 +15,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      image_id: {
-        type: Sequelize.ENUM(Sequelize.INTEGER),
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

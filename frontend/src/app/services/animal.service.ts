@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { Animal } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
-  baseURL = 'http://localhost:3000/api/';
+export class AnimalApiService {
+  baseURL = 'http://localhost:3000/api/animals';
 
   constructor(private http: HttpClient) { }
 
-  getAnimals() {
-    const url = this.baseURL + 'animals';
-    return this.http.get(url, {responseType: 'json'});
+  getAnimals(): Observable<Animal[]> {
+    return this.http.get<Animal[]>(this.baseURL, {responseType: 'json'});
   }
 
 }

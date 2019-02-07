@@ -14,10 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Image.associate = (models) => {
-    Image.belongsToMany(models.News, {
-      through: 'NewsImages',
-      as: 'news',
-      foreignKey: 'imageId',
+    Image.belongsTo(models.News, {
+      foreignKey: 'fk_newsId',
     });
   };
 

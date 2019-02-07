@@ -8,7 +8,7 @@ import { AnimalComponent } from './animal/animal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CommonNewsComponent } from './home/common-news/common-news.component';
-import { ScheduleComponent } from './home/schedule/schedule.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
