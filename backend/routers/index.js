@@ -1,5 +1,6 @@
 const animalsController = require('../controllers').animals;
 const newsController = require('../controllers').news;
+const imagesController = require('../controllers').images;
 
 module.exports = (app) => {
   app.get('/api/', (req, res) => res.status(200).send({
@@ -9,6 +10,6 @@ module.exports = (app) => {
   app.get('/api/animals', animalsController.list);
   app.post('/api/animals', (req, res) => animalsController.create);
 
-  app.get('/api/news/', newsController.list);
   app.get('/api/news/main', newsController.getMainNews);
+  app.get('/api/image/:id', imagesController.getById);
 };

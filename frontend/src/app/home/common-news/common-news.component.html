@@ -5,14 +5,16 @@
 
   <ul class="app-common-news__carousel-list">
     <li class="app-common-news__carousel-item" *ngFor="let news of newsData">
-      <img src="" alt="news-image">
+      <img [src]="" alt="news-image" *ngIf="isImageLoading; else noImageFound">
+      <ng-template #noImageFound>
+          <img src="../../../assets/image/default.png" alt="default-image">
+     </ng-template>
       <div class="description">
         <h3>{{ news.title }}</h3>
         <div>{{ news.description }}</div>
       </div>
     </li>
   </ul>
-
   <ul class="app-common-news__carousel-labels-list">
     <li class="app-common-news__carousel-label">
       <label for="slide1"></label>

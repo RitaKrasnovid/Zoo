@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NewsApiService } from 'src/app/services/news.service';
 import { News, Image } from 'src/app/models';
-import { ImageApiService } from 'src/app/services/image.service';
+
 
 @Component({
   selector: 'app-common-news',
@@ -10,35 +10,53 @@ import { ImageApiService } from 'src/app/services/image.service';
 })
 export class CommonNewsComponent implements OnInit {
   public newsData: News[];
-  public imageData: Image[];
+  public imageData;
+  public urlBase64;
+
+  isImageLoading: boolean;
 
   constructor(
     private newsApiService: NewsApiService,
-    private imageApiService: ImageApiService,
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.initMainNews();
   }
 
   initMainNews() {
-    this.newsApiService.getMainNews().subscribe(
-      (data: News[]) => {
-        this.newsData = data;
-        this.initImage(1); // todo
-        console.log(data);
-        console.log(this.imageData);
-      },
-      err => console.log(err),
-      () => console.log('News component completed')
-    );
+    this.newsApiService.getMainNews()
+      .subscribe(
+        (data: News[]) => {
+          this.newsData = data;
+          this.imageData = this.newsData.map(n => n.images[0].data);
+        },
+        err => console.log(err),
+        () => console.log('News component completed')
+      );
   }
 
-  initImage(id: number) {
-    this.imageApiService.getImageById(id).subscribe(
-      (data: Image[]) => {
-        this.imageData = data;
-      }
-    );
-  }
+  // for convert images
+
+  // createImageFromBlob(image: Blob) {
+  //   const reader = new FileReader();
+  //   reader.addEventListener('load', () => {
+  //     this.urlBase64 = reader.result;
+  //   }, false);
+
+  //   if (image) {
+  //     const blob = new Blob([image], {type: 'image/jpg'});
+  //     reader.readAsDataURL(blob);
+  //   }
+  // }
+
+  // getImageFromService() {
+  //   this.isImageLoading = true;
+  //   this.imageApiService.getImageById(1).subscribe(data => {
+  //     this.createImageFromBlob(data);
+  //     this.isImageLoading = false;
+  //   }, error => {
+  //     this.isImageLoading = false;
+  //     console.log(error);
+  //   });
+  // }
 }

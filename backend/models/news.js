@@ -4,19 +4,23 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [0, 255],
+        len: [0, 150],
       },
     },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [0, 1500],
+      },
     },
   }, {});
 
   News.associate = (models) => {
-    News.hasMany(models.Images, {
-      as: 'images',
-      foreignKey: 'fk_newsId',
+    News.belongsToMany(models.Images, {
+      through: 'NewsImages',
+      as: 'image',
+      foreignKey: 'newsId',
     });
   };
 

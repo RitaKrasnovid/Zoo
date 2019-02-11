@@ -1,18 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
-  const Animal = sequelize.define('Animal', {
+  const Animal = sequelize.define('Animals', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [0, 255],
-      },
+    },
+    order: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    family: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   }, {});
 
   Animal.associate = (models) => {
     Animal.belongsToMany(models.Images, {
       through: 'AnimalsImages',
-      as: 'images',
+      as: 'image',
       foreignKey: 'animalId',
     });
   };

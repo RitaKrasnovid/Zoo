@@ -2,7 +2,6 @@ module.exports = (sequelize, DataTypes) => {
   const Image = sequelize.define('Images', {
     title: {
       type: DataTypes.STRING,
-      primaryKey: true,
       validate: {
         len: [0, 100],
       },
@@ -14,8 +13,15 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Image.associate = (models) => {
-    Image.belongsTo(models.News, {
-      foreignKey: 'fk_newsId',
+    Image.belongsToMany(models.News, {
+      through: 'NewsImages',
+      as: 'news',
+      foreignKey: 'imageId',
+    });
+    Image.belongsToMany(models.Animals, {
+      through: 'AnimalsImages',
+      as: 'animal',
+      foreignKey: 'imageId',
     });
   };
 

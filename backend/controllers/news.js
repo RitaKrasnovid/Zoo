@@ -1,7 +1,7 @@
 const models = require('../models');
 
 const News = models.News;
-const Image = models.Image;
+const Image = models.Images;
 
 const create = (req, res) => {
   return News
@@ -14,30 +14,15 @@ const create = (req, res) => {
     .catch(error => res.status(400).send(error));
 };
 
-const list = (req, res, next) => {
-  News.findAll({
-    attributes: [['id', 'newsId'], 'title', 'description'],
+const list = (req, res, next) => News
+  .findAll({
     include: [{
       model: Image,
-      where: { fk_newsId: 'News.id' },
+      as: 'image',
     }],
   })
-    .then(result => res.status(200).send(result))
-    .catch(error => next(error));
-};
-
-// const list = (req, res, next) => News
-//   .findAll({
-//     include: [{
-//       model: Image,
-//       as: 'image',
-//       required: false,
-//       attributes: ['id', 'title'],
-//       through: { attributes: [] },
-//     }],
-//   })
-//   .then(result => res.status(200).send(result))
-//   .catch(error => next(error));
+  .then(result => res.status(200).send(result))
+  .catch(error => next(error));
 
 const getMainNews = (req, res, next) => News
   .findAll({
@@ -47,15 +32,15 @@ const getMainNews = (req, res, next) => News
     limit: 3,
     include: [{
       model: Image,
+      as: 'image',
       required: false,
-      // where: { fk_newsId: 'news.id' },
     }],
   })
   .then(result => res.status(200).send(result))
   .catch(error => next(error));
 
 const getById = (req, res, next) => {
-  const newsId = req.param.id;
+  const newsId = req.params.id;
 
   News.findAll({
     where: {
