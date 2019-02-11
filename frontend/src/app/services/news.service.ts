@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { News } from '../models';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewsApiService {
-  baseURL = 'http://localhost:3000/api/news/';
+  baseURL = environment.baseUrl + '/api/news/';
 
   constructor(private http: HttpClient) { }
 

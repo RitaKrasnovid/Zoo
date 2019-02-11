@@ -16,7 +16,6 @@ export class AnimalsListComponent implements OnInit {
     this.apiService.getAnimals().subscribe(
       (data: Animal[]) => {
         this.animals = data;
-        console.log(data);
       },
       err => console.log(err),
       () => console.log('Animals list component completed')

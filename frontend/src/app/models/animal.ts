@@ -3,6 +3,4 @@ export interface Animal {
   title: string;
   order: string;
   family: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
