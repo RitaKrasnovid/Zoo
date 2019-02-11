@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   Animal.associate = (models) => {
     Animal.belongsToMany(models.Images, {
       through: 'AnimalsImages',
-      as: 'image',
+      as: 'images',
       foreignKey: 'animalId',
     });
   };

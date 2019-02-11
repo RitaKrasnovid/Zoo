@@ -18,7 +18,7 @@ const list = (req, res, next) => News
   .findAll({
     include: [{
       model: Image,
-      as: 'image',
+      as: 'images',
     }],
   })
   .then(result => res.status(200).send(result))
@@ -32,7 +32,7 @@ const getMainNews = (req, res, next) => News
     limit: 3,
     include: [{
       model: Image,
-      as: 'image',
+      as: 'images',
       required: false,
     }],
   })

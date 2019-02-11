@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     });
     Image.belongsToMany(models.Animals, {
       through: 'AnimalsImages',
-      as: 'animal',
+      as: 'animals',
       foreignKey: 'imageId',
     });
   };

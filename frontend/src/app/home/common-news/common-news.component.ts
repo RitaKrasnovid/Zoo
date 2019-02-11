@@ -28,6 +28,7 @@ export class CommonNewsComponent implements OnInit {
       .subscribe(
         (data: News[]) => {
           this.newsData = data;
+          console.log(this.newsData);
           this.imageData = this.newsData.map(n => n.images[0].data);
         },
         err => console.log(err),
