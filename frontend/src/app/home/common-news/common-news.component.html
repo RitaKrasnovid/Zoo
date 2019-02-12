@@ -17,8 +17,8 @@
       </div>
     </li>
   </ul>
-  <ul class="app-common-news__carousel-labels-list" *ngFor="let news of newsData">
-    <li class="app-common-news__carousel-label">
+  <ul class="app-common-news__carousel-labels-list">
+    <li class="app-common-news__carousel-label" *ngFor="let news of newsData">
       <label for={{news.id}}></label>
     </li>
   </ul>
