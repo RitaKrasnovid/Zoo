@@ -1,3 +1,5 @@
+$width: 100%;
+
 .app-common-news {
   margin: 0 auto;
   width: 100%;
@@ -75,21 +77,22 @@
   }
 }
 
-#slide1:checked ~ .app-common-news__carousel-list {
+
+.app-common-news__selector:nth-child(1):checked ~ .app-common-news__carousel-list {
   left: 0;
 }
-#slide1:checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(1) label {
+.app-common-news__selector:nth-child(1):checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(1) label {
   background-color: black;
 }
-#slide2:checked ~ .app-common-news__carousel-list {
-  left: -100%;
+.app-common-news__selector:nth-child(2):checked ~ .app-common-news__carousel-list {
+  left: -$width;
 }
-#slide2:checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(2) label {
+.app-common-news__selector:nth-child(2):checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(2) label {
   background-color: black;
 }
-#slide3:checked ~ .app-common-news__carousel-list {
-  left: -200%;
+.app-common-news__selector:nth-child(3):checked ~ .app-common-news__carousel-list {
+  left: -2 * $width;
 }
-#slide3:checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(3) label {
+.app-common-news__selector:nth-child(3):checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(3) label {
   background-color: black;
 }

@@ -1,4 +1,4 @@
-<div class="app-common-news">
+<div class="app-common-news" *ngIf="newsData">
   <input 
     *ngFor="let news of newsData" 
     type="radio" checked="checked" 
