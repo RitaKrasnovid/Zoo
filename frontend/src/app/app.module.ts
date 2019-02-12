@@ -12,7 +12,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
-  { path: '*', component: AnimalsListComponent },
+  { path: '/', component: HomeComponent },
+  { path: 'animals', component: AnimalsListComponent},
+  { path: '',   redirectTo: '/'},
 ];
 
 @NgModule({

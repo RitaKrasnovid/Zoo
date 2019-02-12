@@ -4,12 +4,24 @@
   </div>
   <nav class="app-header__nav">
     <div class="app-header__logo">
-      <a routerLink="/home" class="app-header__nav--nav-home">{{title}}</a>
+      <a routerLink="/" class="app-header__nav--nav-home">{{title}}</a>
     </div>
     <ul class="app-header__list">
-      <li class="app-header__item"><a class="app-header__nav-link" routerLink="/animals">Animals</a></li>
-      <li class="app-header__item"><a class="app-header__nav-link" routerLink="/news">News</a></li>
-      <li class="app-header__item"><a class="app-header__nav-link" routerLink="/about">About zoo</a></li>
+      <li class="app-header__item">
+        <a class="app-header__nav-link" routerLink="/animals" routerLinkActive="active">
+          Animals
+        </a>
+      </li>
+      <li class="app-header__item">
+        <a class="app-header__nav-link" routerLink="/news" routerLinkActive="active">
+          News
+        </a>
+      </li>
+      <li class="app-header__item">
+        <a class="app-header__nav-link" routerLink="/about" routerLinkActive="active">
+          About zoo
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
