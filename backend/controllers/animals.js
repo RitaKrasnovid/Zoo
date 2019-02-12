@@ -1,6 +1,7 @@
 const models = require('../models');
 
 const Animal = models.Animal;
+const Image = models.Images;
 
 const create = (req, res) => {
   return Animal
@@ -12,7 +13,12 @@ const create = (req, res) => {
 };
 
 const list = (req, res, next) => Animal
-  .findAll()
+  .findAll({
+    include: [{
+      model: Image,
+      as: 'images',
+    }],
+  })
   .then(result => res.status(200).send(result))
   .catch(error => next(error));
 

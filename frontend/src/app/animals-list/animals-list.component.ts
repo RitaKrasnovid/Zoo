@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { AnimalApiService } from '../services/animal.service';
+import { Animal } from '../models';
 
 @Component({
   selector: 'app-animals-list',
@@ -7,18 +8,17 @@ import { ApiService } from '../api.service';
   styleUrls: ['./animals-list.component.scss']
 })
 export class AnimalsListComponent implements OnInit {
-  public animalData;
+  public animals: Animal[];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: AnimalApiService) { }
 
   ngOnInit() {
     this.apiService.getAnimals().subscribe(
-      data => {
-        this.animalData = data;
-        console.log(data);
+      (data: Animal[]) => {
+        this.animals = data;
       },
       err => console.log(err),
-      () => console.log('Animal component completed')
+      () => console.log('Animals list component completed')
     );
   }
 

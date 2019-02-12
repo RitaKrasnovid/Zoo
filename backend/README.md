@@ -1,8 +1,10 @@
 # Backend
 
+Establish Sequelize CLI `npm install -g sequelize-cli`
+
 ## How to run
 
-`npm run start:`
+`npm run start:dev`
 
 That's all.
 By default it will run application with
@@ -12,32 +14,32 @@ By default it will run application with
 ## Sequelize ORM
 Create database
 
-`node_modules/.bin/sequelize db:create`
+`sequelize db:create`
 
 Run database migrations
 
-`node_modules/.bin/sequelize db:migrate`
+`sequelize db:migrate`
 
 Fill database with some initial data
 
-`node_modules/.bin/sequelize db:seed:all`
+`sequelize db:seed:all`
 
 It's possible to undo last migration(s)
 
-`node_modules/.bin/sequelize db:migrate:undo`
+`sequelize db:migrate:undo`
 
 Generate new model and migrations
 
-`node_modules/.bin/sequelize model:create --name User --attributes 'name:string email:string bio:text'`
+`sequelize model:create --name User --attributes 'name:string email:string bio:text'`
 
 
 ## Tests
 
-`NODE_ENV=test node_modules/.bin/sequelize db:drop`
+`sequelize db:drop`
 
-`NODE_ENV=test node_modules/.bin/sequelize db:create`
+`sequelize db:create`
 
-`NODE_ENV=test node_modules/.bin/sequelize db:migrate`
+`sequelize db:migrate`
 
 `npm test`
 

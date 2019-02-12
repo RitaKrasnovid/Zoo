@@ -1,0 +1,98 @@
+$width-carousel: 100%;
+
+.app-common-news {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  height: 600px;
+  background-color: #eee;
+  overflow: hidden;
+  
+  &__carousel-list, &__carousel-labels-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+  }
+
+  &__carousel-item {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    .description {
+      width: 50%;
+      height: 50%;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__carousel-list {
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: left .5s ease-out;
+    -o-transition: left .5s ease-out;
+    -ms-transition: left .5s ease-out;
+    -moz-transition: left .5s ease-out;
+    -webkit-transition: left .5s ease-out;
+  }
+  &__carousel-item {
+    width: 33.33333333%;
+    height: 100%;
+    color: #000000;
+  }
+
+  &__carousel-labels-list {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  &__selector {
+    display: none;
+  }
+
+  &__carousel-label {
+    display: inline-block;
+    padding: 3px;
+  }
+
+  &__carousel-label label {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+
+.app-common-news__selector:nth-child(1):checked ~ .app-common-news__carousel-list {
+  left: 0;
+}
+.app-common-news__selector:nth-child(1):checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(1) label {
+  background-color: black;
+}
+.app-common-news__selector:nth-child(2):checked ~ .app-common-news__carousel-list {
+  left: -$width-carousel;
+}
+.app-common-news__selector:nth-child(2):checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(2) label {
+  background-color: black;
+}
+.app-common-news__selector:nth-child(3):checked ~ .app-common-news__carousel-list {
+  left: -2 * $width-carousel;
+}
+.app-common-news__selector:nth-child(3):checked ~ .app-common-news__carousel-labels-list .app-common-news__carousel-label:nth-child(3) label {
+  background-color: black;
+}
