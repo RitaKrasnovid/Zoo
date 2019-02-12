@@ -1,0 +1,15 @@
+.content {
+  background: url(../../assets/image/forest.jpg) no-repeat;
+  min-width: 900px;
+}
+
+.app-animals-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+}
