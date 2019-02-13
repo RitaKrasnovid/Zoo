@@ -23,8 +23,8 @@ export class AnimalFilterComponent implements OnInit {
   ];
 
   public filter = new FormGroup({
-    filter_type: new FormControl('Choose filter type'),
-    search_type: new FormControl('Choose search type'),
+    filter_type: new FormControl(this.filterTypes[0]),
+    search_type: new FormControl(this.searchTypes[0]),
     search_value: new FormControl(),
   });
 

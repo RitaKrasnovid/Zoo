@@ -15,5 +15,5 @@
     <input type="text" class="app-animal-filter__search-text" placeholder="Enter value" formControlName="search_value">
     <button type="submit" class="app-animal-filter__button">Search</button>
   </form>
-  <p class="app-animal-filter__results">Results for "<b> {{countResult}} </b>"</p>
+  <p class="app-animal-filter__results" *ngIf="countResult">Results for "<b> {{countResult}} </b>"</p>
 </div>
