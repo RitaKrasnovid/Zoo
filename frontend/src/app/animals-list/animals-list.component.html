@@ -1,5 +1,7 @@
 <div class="content">
   <div class="animals-list">
-    <app-animal *ngFor="let animal of animals" [animal]="animal"></app-animal>
+    <ng-container *ngFor="let animal of animals" >
+      <app-animal [animal]="animal"></app-animal>
+    </ng-container>
   </div>
 </div>
