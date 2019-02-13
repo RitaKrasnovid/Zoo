@@ -20,4 +20,5 @@ export class AnimalApiService {
   filterByNameContainsValue(value: string) {
     return this.http.get<Animal[]>(this.baseURL + value, {responseType: 'json'});
   }
+
 }

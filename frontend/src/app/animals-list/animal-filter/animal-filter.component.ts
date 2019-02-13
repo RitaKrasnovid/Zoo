@@ -10,6 +10,7 @@ import { Animal } from 'src/app/models';
 })
 export class AnimalFilterComponent implements OnInit {
   animals: Animal[];
+  countResult: number;
 
   @Output() update: EventEmitter<Animal[]> = new EventEmitter<Animal[]>();
 
@@ -19,7 +20,6 @@ export class AnimalFilterComponent implements OnInit {
 
   public searchTypes = [
     { type: 'contains', value: 'Contains' },
-    { type: 'starts', value: 'Starts with' },
   ];
 
   public filter = new FormGroup({
@@ -40,17 +40,15 @@ export class AnimalFilterComponent implements OnInit {
   }
 
   filterByName(searchType: string, value: string) {
-    if (searchType === 'contains' && value.length > 0) {
+    if (searchType === 'contains') {
       this.animalService.filterByNameContainsValue(value).subscribe(
         (results: Animal[]) => {
           this.animals = results;
-          console.log(this.animals);
+          this.countResult = this.animals.length;
           this.update.emit(this.animals);
         },
         err => console.log(err)
       );
-    } else if (searchType === 'starts') {
-
     }
   }
 
