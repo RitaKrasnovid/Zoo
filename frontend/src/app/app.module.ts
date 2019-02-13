@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CommonNewsComponent } from './home/common-news/common-news.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
+import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filter.component';
 
 const appRoutes: Routes = [
   {
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     HomeComponent,
     CommonNewsComponent,
     ScheduleComponent,
-    HeaderComponent
+    HeaderComponent,
+    AnimalFilterComponent
   ],
   imports: [
     BrowserModule,

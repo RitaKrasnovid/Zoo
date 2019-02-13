@@ -1,0 +1,54 @@
+@import '../../../assets/styles/variables.scss';
+
+.app-animal-filter {
+  height: 95px;
+  font-size: 20px;
+
+  &__select,
+  &__select--type{
+    width: 150px;
+    height: 40px;
+    outline: none;
+    border-radius: 5px;
+    background: $primary-color;
+    appearance: none;
+    background-image: url('../../../assets/image/arrow.png');
+    background-size: 10px;
+    background-repeat: no-repeat; 
+    background-position:  95% 50%;
+    padding: 5px 35px 5px 5px;
+    margin: 10px 10px 10px 0;
+  }
+
+  &__select--type {
+    font-weight: bold;
+    width: 200px;
+  }
+
+  &__search-text {
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid $primary-color;
+    margin: 10px 10px 10px 0;
+  }
+
+  &__button {
+    outline: none;
+    background: $secondary-color;
+    border-radius: 5px;
+    border: 3px solid $primary-color;
+  }
+
+  &__results {
+    margin: 0;
+    margin-bottom: 10px; 
+    color: $font-secondary-color;
+  }
+}
+
+
+select::-ms-expand { 
+  display: none; /* hide the default arrow in ie10 and ie11 */
+}
