@@ -11,6 +11,7 @@ import { CommonNewsComponent } from './home/common-news/common-news.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
 import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filter.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -35,6 +36,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

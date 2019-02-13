@@ -9,7 +9,7 @@ import { Animal } from '../models';
   providedIn: 'root'
 })
 export class AnimalApiService {
-  baseURL = environment.baseUrl + '/api/animals';
+  baseURL = environment.baseUrl + '/api/animals/';
 
   constructor(private http: HttpClient) { }
 
@@ -17,4 +17,7 @@ export class AnimalApiService {
     return this.http.get<Animal[]>(this.baseURL, {responseType: 'json'});
   }
 
+  filterByNameContainsValue(value: string) {
+    return this.http.get<Animal[]>(this.baseURL + value, {responseType: 'json'});
+  }
 }

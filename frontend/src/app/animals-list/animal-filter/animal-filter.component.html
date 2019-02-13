@@ -1,13 +1,19 @@
 <div class="app-animal-filter">
-  <select class="app-animal-filter__select--type">
-    <option disabled class="app-animal-filter__item--disabled">Enter filter type</option>
-    <option value="name" class="app-animal-filter__item">Filter by Name</option>
-  </select>
-  <select class="app-animal-filter__select">
-    <option value="name" class="app-animal-filter__item" selected>Contains</option>
-    <option value="name" class="app-animal-filter__item">Starts with</option>
-  </select>
-  <input type="text" class="app-animal-filter__search-text" placeholder="Enter value">
-  <input type="button" value="Search" class="app-animal-filter__button">
-  <p class="app-animal-filter__results">Results for "<b>  </b>"</p>
+  <form [formGroup]="filter" (ngSubmit)="onSubmit()">
+    <select class="app-animal-filter__select--type" formControlName="filter_type">
+      <option disabled class="app-animal-filter__item--disabled">Choose filter type</option>
+      <option class="app-animal-filter__item" *ngFor="let type of filterTypes" [ngValue]="type">
+        {{type.value}}
+      </option>
+    </select>
+    <select class="app-animal-filter__select" formControlName="search_type">
+      <option disabled class="app-animal-filter__item--disabled">Choose search type</option>
+      <option class="app-animal-filter__item" *ngFor="let type of searchTypes" [ngValue]="type">
+        {{type.value}}
+      </option>
+    </select>
+    <input type="text" class="app-animal-filter__search-text" placeholder="Enter value" formControlName="search_value">
+    <button type="submit" class="app-animal-filter__button">Search</button>
+  </form>
+  <p class="app-animal-filter__results">Results for "<b> </b>"</p>
 </div>

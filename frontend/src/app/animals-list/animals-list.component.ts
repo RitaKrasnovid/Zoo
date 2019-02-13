@@ -22,4 +22,8 @@ export class AnimalsListComponent implements OnInit {
     );
   }
 
+  updateList(newList: Animal[]) {
+    this.animals = newList;
+  }
+
 }
