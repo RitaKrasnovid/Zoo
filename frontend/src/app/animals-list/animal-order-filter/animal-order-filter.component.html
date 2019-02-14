@@ -1,0 +1,6 @@
+<div class="animal-order-filter">
+  <h3 class="animal-order-filter__title">All {{title}} our ZOO</h3>
+  <div class="animal-order-filter__group-orders">
+    <span class="animal-order-filter__order" *ngFor="let order of orders" (click)="filterByOrder(order)">{{order}}</span>
+  </div>
+</div>

@@ -1,5 +1,11 @@
-<p>
-  <li *ngFor="let animal of animals">
-    {{animal.id}} - {{animal.title}}
-  </li>
-</p>
+<div class="content">
+  <app-animal-filter (update)="updateList($event)"></app-animal-filter>
+  <div class="animal-order-filter">
+    <app-animal-order-filter (update)="updateList($event)"></app-animal-order-filter>
+  </div>
+  <div class="animals-list">
+    <ng-container *ngFor="let animal of animals">
+      <app-animal [animal]="animal"></app-animal>
+    </ng-container>
+  </div>
+</div>

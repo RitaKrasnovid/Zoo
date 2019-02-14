@@ -17,4 +17,12 @@ export class AnimalApiService {
     return this.http.get<Animal[]>(this.baseURL, {responseType: 'json'});
   }
 
+  filterByNameContainsValue(value: string) {
+    return this.http.get<Animal[]>(this.baseURL + value, {responseType: 'json'});
+  }
+
+  filterAnimalsByOrder(value: string) {
+    const urlForOrderFilter = this.baseURL + 'order/' + value;
+    return this.http.get<Animal[]>(urlForOrderFilter, {responseType: 'json'});
+  }
 }
