@@ -10,6 +10,7 @@ import { Animal } from '../models';
 })
 export class AnimalApiService {
   baseURL = environment.baseUrl + '/api/animals/';
+  animals: Animal[];
 
   constructor(private http: HttpClient) { }
 

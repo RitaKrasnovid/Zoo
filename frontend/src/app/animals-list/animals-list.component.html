@@ -1,8 +1,12 @@
 <div class="content">
-  <app-animal-filter (update)="updateList($event)"></app-animal-filter>
+  <app-animal-filter *ngIf="animals; else notFoundAnimals" (filtering)="filterByName($event)" [countResult]="animals.length"></app-animal-filter>
   <div class="animals-list">
-    <ng-container *ngFor="let animal of animals" >
+    <ng-container *ngFor="let animal of animals">
       <app-animal [animal]="animal"></app-animal>
     </ng-container>
   </div>
 </div>
+
+<ng-template #notFoundAnimals>
+  <p class="animals-list__not-found">Animals not Found</p>
+</ng-template>

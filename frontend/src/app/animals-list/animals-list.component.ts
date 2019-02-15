@@ -5,7 +5,7 @@ import { Animal } from '../models';
 @Component({
   selector: 'app-animals-list',
   templateUrl: './animals-list.component.html',
-  styleUrls: ['./animals-list.component.scss']
+  styleUrls: ['./animals-list.component.scss'],
 })
 export class AnimalsListComponent implements OnInit {
   public animals: Animal[];
@@ -22,8 +22,15 @@ export class AnimalsListComponent implements OnInit {
     );
   }
 
-  updateList(newList: Animal[]) {
-    this.animals = newList;
+  filterByName(filterValue) {
+    if (filterValue.search_type.type === 'contains') {
+      this.apiService.filterByNameContainsValue(filterValue.search_value).subscribe(
+        (results: Animal[]) => {
+          this.animals = results;
+        },
+        err => console.log(err)
+      );
+    }
   }
 
 }
