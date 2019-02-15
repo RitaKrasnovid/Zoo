@@ -1,6 +1,6 @@
 <div class="animal-filter">
   <form [formGroup]="filter" (ngSubmit)="onSubmit()">
-    <select class="animal-filter__select--type" formControlName="filter_type">
+    <select class="animal-filter__select-type" formControlName="filter_type">
       <option disabled class="animal-filter__item--disabled">Choose filter type</option>
       <option class="animal-filter__item" *ngFor="let type of filterTypes" [ngValue]="type">
         {{type.value}}
