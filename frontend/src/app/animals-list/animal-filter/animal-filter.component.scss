@@ -21,18 +21,6 @@
 
   &__select-type {
     font-weight: bold;
-    width: 220px;
-    height: 40px;
-    outline: none;
-    border-radius: 5px;
-    background: $primary-color;
-    appearance: none;
-    background-image: url('../../../assets/image/arrow.png');
-    background-size: 10px;
-    background-repeat: no-repeat; 
-    background-position:  95% 50%;
-    padding: 5px 35px 5px 5px;
-    margin: 10px 10px 10px 0;
   }
 
   &__search-text {
