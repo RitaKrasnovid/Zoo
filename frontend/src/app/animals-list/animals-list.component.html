@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" *ngIf="animals$ | async; let animals">
   <app-animal-filter (filtering)="filterByName($event)" [countResult]="animals.length"></app-animal-filter>
   <div class="animals-list">
     <ng-container *ngFor="let animal of animals">
@@ -6,4 +6,3 @@
     </ng-container>
   </div>
 </div>
-
