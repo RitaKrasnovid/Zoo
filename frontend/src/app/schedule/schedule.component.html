@@ -1,7 +1,8 @@
-<div class="app-schedule">
-  <h2 class="app-schedule__title">Don't miss!</h2>
-  <div class="app-schedule__select-date">
-    <span>Today</span>
-    <span>Tomorrow</span>
-  </div>
+<div class="schedule">
+  <h2 class="schedule__title">Don't miss!</h2>
+  <nav class="schedule__nav">
+    <a href="/" class="schedule__date" [class.active]="true" routerLinkActive="active">Today</a>
+    <a href="/date" class="schedule__date" [class.active]="false" routerLinkActive="active">Tomorrow</a>
+  </nav>
+  <router-outlet></router-outlet>
 </div>

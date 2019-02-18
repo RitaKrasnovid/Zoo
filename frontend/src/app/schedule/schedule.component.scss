@@ -1,0 +1,25 @@
+@import '../../assets/styles/variables.scss';
+
+.schedule {
+
+  &__nav {
+    display: flex;
+
+  }
+
+  &__date {
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    color: $font-primary-color;
+    border-radius: 3px;
+    padding: 3px 8px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  &__date.active {
+    background: $primary-color;
+  }
+}

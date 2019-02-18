@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { CommonNewsComponent } from './home/common-news/common-news.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
+import { ScheduleTodayComponent } from './schedule/schedule-today/schedule-today.component';
+import { ScheduleDateComponent } from './schedule/schedule-date/schedule-date.component';
 
 const appRoutes: Routes = [
   { path: '*', component: AnimalsListComponent },
@@ -23,7 +25,9 @@ const appRoutes: Routes = [
     HomeComponent,
     CommonNewsComponent,
     ScheduleComponent,
-    HeaderComponent
+    HeaderComponent,
+    ScheduleTodayComponent,
+    ScheduleDateComponent
   ],
   imports: [
     BrowserModule,
