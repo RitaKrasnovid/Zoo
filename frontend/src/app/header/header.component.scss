@@ -1,6 +1,6 @@
 @import '../../assets/styles/variables';
 
-.app-header {
+.header {
   width: 100%;
   height: 120px;
 
@@ -15,7 +15,7 @@
     line-height: 35px;
     &:hover {
       background: $secondary-color;
-      color: #ff8040;
+      color: $orange;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
   }

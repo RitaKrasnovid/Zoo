@@ -10,9 +10,16 @@ import { HomeComponent } from './home/home.component';
 import { CommonNewsComponent } from './home/common-news/common-news.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
+import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filter.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
-  { path: '*', component: AnimalsListComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
+  },
+  { path: 'animals', component: AnimalsListComponent},
 ];
 
 @NgModule({
@@ -23,11 +30,14 @@ const appRoutes: Routes = [
     HomeComponent,
     CommonNewsComponent,
     ScheduleComponent,
-    HeaderComponent
+    HeaderComponent,
+    AnimalFilterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
