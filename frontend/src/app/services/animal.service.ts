@@ -9,12 +9,17 @@ import { Animal } from '../models';
   providedIn: 'root'
 })
 export class AnimalApiService {
-  baseURL = environment.baseUrl + '/api/animals';
+  baseURL = environment.baseUrl + '/api/animals/';
+  animals: Animal[];
 
   constructor(private http: HttpClient) { }
 
   getAnimals(): Observable<Animal[]> {
     return this.http.get<Animal[]>(this.baseURL, {responseType: 'json'});
+  }
+
+  filterByNameContainsValue(value: string) {
+    return this.http.get<Animal[]>(this.baseURL + value, {responseType: 'json'});
   }
 
 }
