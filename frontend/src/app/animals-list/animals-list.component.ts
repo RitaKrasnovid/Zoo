@@ -8,7 +8,7 @@ import { Animal } from '../models';
   styleUrls: ['./animals-list.component.scss'],
 })
 export class AnimalsListComponent implements OnInit {
-  public animals: Animal[];
+  public animals: Animal[] = [];
 
   constructor(private apiService: AnimalApiService) { }
 

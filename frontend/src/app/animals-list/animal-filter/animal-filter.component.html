@@ -15,5 +15,9 @@
     <input type="text" class="animal-filter__search-text" placeholder="Enter value" formControlName="search_value">
     <button type="submit" class="animal-filter__button">Search</button>
   </form>
-  <p class="animal-filter__results" *ngIf="countResult">Results for "<b> {{countResult}} </b>"</p>
+  <p class="animal-filter__results" *ngIf="countResult > 0; else notFoundAnimals">Results for "<b> {{countResult}} </b>" animals</p>
 </div>
+
+<ng-template #notFoundAnimals>
+    <p class="animal-filter__not-found">Animals not Found</p>
+</ng-template>
