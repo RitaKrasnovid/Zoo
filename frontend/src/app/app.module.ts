@@ -10,10 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { CommonNewsComponent } from './home/common-news/common-news.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
-import { ScheduleTodayComponent } from './schedule/schedule-today/schedule-today.component';
-import { ScheduleDateComponent } from './schedule/schedule-date/schedule-date.component';
 import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ScheduleModule } from './schedule/schedule.module';
 
 const appRoutes: Routes = [
   {
@@ -22,19 +21,9 @@ const appRoutes: Routes = [
     pathMatch: 'full',
   },
   { path: 'animals', component: AnimalsListComponent },
+  { path: 'schedule', component: ScheduleComponent },
 ];
 
-const scheduleRoute: Routes = [
-  { path: 'animals', component: AnimalsListComponent},
-  {
-    path: 'schedule',
-    component: ScheduleComponent,
-    children: [
-      { path: '', component: ScheduleTodayComponent, },
-      { path: 'tomorrow', component: ScheduleDateComponent, },
-    ]
-  },
-];
 
 @NgModule({
   declarations: [
@@ -43,10 +32,7 @@ const scheduleRoute: Routes = [
     AnimalComponent,
     HomeComponent,
     CommonNewsComponent,
-    ScheduleComponent,
     HeaderComponent,
-    ScheduleTodayComponent,
-    ScheduleDateComponent,
     AnimalFilterComponent
   ],
   imports: [
@@ -54,8 +40,8 @@ const scheduleRoute: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    ScheduleModule,
     RouterModule.forRoot(appRoutes),
-    RouterModule.forChild(scheduleRoute),
   ],
   providers: [],
   bootstrap: [AppComponent]

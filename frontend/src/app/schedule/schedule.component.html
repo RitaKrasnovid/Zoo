@@ -1,8 +1,8 @@
 <div class="schedule">
   <h2 class="schedule__title">Don't miss!</h2>
   <nav class="schedule__nav">
-    <a href="schedule" class="schedule__date" [class.active]="true" routerLinkActive="active">Today</a>
-    <a href="schedule/tomorrow" class="schedule__date" [class.active]="false" routerLinkActive="active">Tomorrow</a>
+    <a routerLink="/schedule/today" class="schedule__date" routerLinkActive="active">Today</a>
+    <a routerLink="/schedule/tomorrow" class="schedule__date" routerLinkActive="active">Tomorrow</a>
   </nav>
   <router-outlet></router-outlet>
 </div>
