@@ -1,6 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { AnimalApiService } from 'src/app/services/animal.service';
-import { Animal } from 'src/app/models';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-animal-order-filter',
@@ -8,27 +6,19 @@ import { Animal } from 'src/app/models';
   styleUrls: ['./animal-order-filter.component.scss']
 })
 export class AnimalOrderFilterComponent implements OnInit {
-  @Output() update: EventEmitter<Animal[]> = new EventEmitter<Animal[]>();
+  @Output() filtering: EventEmitter<any> = new EventEmitter<any>();
+  @Input() title: string;
 
   public orders = [
-    'mammals', 'birds', 'reptiles', 'fish', 'amphibia',
+    'mammals', 'birds', 'reptiles', 'fish', 'amphibia', 'Carnivora'
   ];
-  public animals: Animal[];
-  public title: string = 'animals';
 
-  constructor(private animalService: AnimalApiService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  filterByOrder(order: string) {
-    this.title = order;
-    this.animalService.filterAnimalsByOrder(order).subscribe(
-      (results: Animal[]) => {
-        this.animals = results;
-        this.update.emit(this.animals);
-      },
-      err => console.log(err)
-    );
+  filterByOrder(order) {
+    this.filtering.emit(order);
   }
 }

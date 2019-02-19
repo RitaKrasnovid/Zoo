@@ -11,18 +11,23 @@ import { Observable } from 'rxjs';
 })
 export class AnimalsListComponent implements OnInit {
   public animals$: Observable<Animal[]>;
-  countResult: number;
+  public countResult: number;
+  public orderTitle = 'animals';
 
-  constructor(private apiService: AnimalApiService) { }
+  constructor(private animalApiService: AnimalApiService) { }
 
   ngOnInit() {
-    this.animals$ = this.apiService.getAnimals();
+    this.animals$ = this.animalApiService.getAnimals();
   }
 
   filterByName(filterValue) {
     if (filterValue.search_type.type === 'contains') {
-      this.animals$ = this.apiService.filterByNameContainsValue(filterValue.search_value);
+      this.animals$ = this.animalApiService.filterByNameContainsValue(filterValue.search_value);
      }
   }
 
+  filterByOrder(order: string) {
+    this.orderTitle = order;
+    this.animals$ = this.animalApiService.filterAnimalsByOrder(order);
+  }
 }
