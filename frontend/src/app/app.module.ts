@@ -12,6 +12,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
 import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewsComponent } from './news-list/news/news.component';
 
 const appRoutes: Routes = [
   {
@@ -20,6 +22,7 @@ const appRoutes: Routes = [
     pathMatch: 'full',
   },
   { path: 'animals', component: AnimalsListComponent},
+  { path: 'news', component: NewsListComponent },
 ];
 
 @NgModule({
@@ -31,7 +34,9 @@ const appRoutes: Routes = [
     CommonNewsComponent,
     ScheduleComponent,
     HeaderComponent,
-    AnimalFilterComponent
+    AnimalFilterComponent,
+    NewsListComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,

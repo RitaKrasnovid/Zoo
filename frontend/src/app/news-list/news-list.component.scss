@@ -1,0 +1,21 @@
+@import '../../assets/styles/variables.scss';
+
+.news-list {
+  background: $light-green url('../../assets/image/leave.png') 100% 0% repeat-y;
+  background-size: 250px;
+
+  &__box {
+    margin: 0 auto;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  &__title {
+    margin: 0;
+    padding: 30px;
+    text-shadow: 1px 1px 1px #000000, 0 0 1em $orange;
+  }
+}

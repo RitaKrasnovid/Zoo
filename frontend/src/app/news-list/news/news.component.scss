@@ -1,0 +1,43 @@
+@import '../../../assets/styles/variables.scss';
+
+.news {
+  display: flex;
+
+  &__card {
+    width: 450px;
+    height: 350px;
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &__title {
+    padding: 5px 15px;
+    background-color: $primary-color;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  &__image {
+    border: 5px solid rgba(238, 202, 41, 0.342);
+    border-radius: 50% 10%;
+    cursor: pointer;
+  }
+
+  &__link {
+    text-decoration: none;
+    margin: 20px;
+    color: $orange;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
