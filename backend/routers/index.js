@@ -10,5 +10,6 @@ module.exports = (app) => {
   app.post('/api/animals/', (req, res) => animalsController.create);
   app.get('/api/animals/:value', animalsController.filterByNameContainsValue);
 
+  app.get('/api/news/', newsController.list);
   app.get('/api/news/main', newsController.getMainNews);
 };

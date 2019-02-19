@@ -1,0 +1,12 @@
+<div class="news-list" *ngIf="news$ | async; let newsData; else notFoundNews">
+  <h1 class="news-list__title">News of our ZOO</h1>
+  <div class="news-list__box">
+    <ng-container *ngFor="let news of newsData">
+      <app-news [news]="news"></app-news>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #notFoundNews>
+  <p>News not found</p>
+</ng-template>
