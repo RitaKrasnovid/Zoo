@@ -12,9 +12,16 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
 import { ScheduleTodayComponent } from './schedule/schedule-today/schedule-today.component';
 import { ScheduleDateComponent } from './schedule/schedule-date/schedule-date.component';
+import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filter.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
-  { path: '*', component: AnimalsListComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
+  },
+  { path: 'animals', component: AnimalsListComponent},
 ];
 
 @NgModule({
@@ -27,11 +34,14 @@ const appRoutes: Routes = [
     ScheduleComponent,
     HeaderComponent,
     ScheduleTodayComponent,
-    ScheduleDateComponent
+    ScheduleDateComponent,
+    AnimalFilterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

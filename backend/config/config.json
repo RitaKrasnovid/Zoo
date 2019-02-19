@@ -9,7 +9,7 @@
   },
   "development": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "root",
     "database": "zoo",
     "host": "localhost",
     "port": 5432,
