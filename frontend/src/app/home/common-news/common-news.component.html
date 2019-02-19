@@ -7,7 +7,7 @@
 
   <ul class="app-common-news__carousel-list">
     <li class="app-common-news__carousel-item" *ngFor="let news of newsData">
-      <img [src]="" alt="news-image" *ngIf="isImageLoading; else noImageFound">
+      <img [src]="urlBase64" alt="news-image" *ngIf="isImageLoading; else noImageFound">
       <ng-template #noImageFound>
           <img src="../../../assets/image/default.png" alt="default-image">
      </ng-template>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsApiService } from 'src/app/services/news.service';
-import { News } from 'src/app/models';
+import { News, Image } from 'src/app/models';
+import { ImageApiService } from '../../services/image.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -16,6 +18,8 @@ export class CommonNewsComponent implements OnInit {
 
   constructor(
     private newsApiService: NewsApiService,
+    private imageApiService: ImageApiService,
+    private sanitizer: DomSanitizer,
   ) { }
 
   ngOnInit() {
@@ -27,35 +31,29 @@ export class CommonNewsComponent implements OnInit {
       .subscribe(
         (data: News[]) => {
           this.newsData = data;
-          this.imageData = this.newsData.map(n => n.images[0].data);
+          this.imageData = this.newsData.map(n => n.images[0]); // todo undefind
+          console.log(this.imageData);
+          this.readBlob(this.imageData);
         },
         err => console.log(err),
         () => console.log('News component completed')
       );
   }
 
-  // for convert images
 
-  // createImageFromBlob(image: Blob) {
-  //   const reader = new FileReader();
-  //   reader.addEventListener('load', () => {
-  //     this.urlBase64 = reader.result;
-  //   }, false);
-
-  //   if (image) {
-  //     const blob = new Blob([image], {type: 'image/jpg'});
-  //     reader.readAsDataURL(blob);
-  //   }
-  // }
-
-  // getImageFromService() {
-  //   this.isImageLoading = true;
-  //   this.imageApiService.getImageById(1).subscribe(data => {
-  //     this.createImageFromBlob(data);
-  //     this.isImageLoading = false;
-  //   }, error => {
-  //     this.isImageLoading = false;
-  //     console.log(error);
-  //   });
-  // }
+  readBlob(data) {
+    data.map((image: Image) => {
+      this.imageApiService.getImageById(image.id)
+        .subscribe(im => {
+          const blob = new Blob([im], {
+            type: 'img/jpg'
+          });
+          const urlCreator = window.URL;
+          console.log(blob);
+          this.urlBase64 = URL.createObjectURL(blob);
+          console.log(this.urlBase64);
+        });
+    });
+  }
 }
+
