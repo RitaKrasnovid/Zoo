@@ -21,7 +21,19 @@ const appRoutes: Routes = [
     component: HomeComponent,
     pathMatch: 'full',
   },
+  { path: 'animals', component: AnimalsListComponent },
+];
+
+const scheduleRoute: Routes = [
   { path: 'animals', component: AnimalsListComponent},
+  {
+    path: 'schedule',
+    component: ScheduleComponent,
+    children: [
+      { path: '', component: ScheduleTodayComponent, },
+      { path: 'tomorrow', component: ScheduleDateComponent, },
+    ]
+  },
 ];
 
 @NgModule({
@@ -42,7 +54,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    RouterModule.forChild(scheduleRoute),
   ],
   providers: [],
   bootstrap: [AppComponent]
