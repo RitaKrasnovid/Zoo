@@ -12,6 +12,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
 import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ScheduleModule } from './schedule/schedule.module';
 
 const appRoutes: Routes = [
   {
@@ -19,8 +20,10 @@ const appRoutes: Routes = [
     component: HomeComponent,
     pathMatch: 'full',
   },
-  { path: 'animals', component: AnimalsListComponent},
+  { path: 'animals', component: AnimalsListComponent },
+  { path: 'schedule', component: ScheduleComponent },
 ];
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,6 @@ const appRoutes: Routes = [
     AnimalComponent,
     HomeComponent,
     CommonNewsComponent,
-    ScheduleComponent,
     HeaderComponent,
     AnimalFilterComponent
   ],
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    ScheduleModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]

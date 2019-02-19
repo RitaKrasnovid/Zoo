@@ -1,5 +1,6 @@
 const animalsController = require('../controllers').animals;
 const newsController = require('../controllers').news;
+const scheduleController = require('../controllers').schedules;
 
 module.exports = (app) => {
   app.get('/api/', (req, res) => res.status(200).send({
@@ -11,4 +12,6 @@ module.exports = (app) => {
   app.get('/api/animals/:value', animalsController.filterByNameContainsValue);
 
   app.get('/api/news/main', newsController.getMainNews);
+
+  app.get('/api/schedule/:date', scheduleController.getScheduleByDate);
 };
