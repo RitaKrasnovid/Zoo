@@ -1,3 +1,6 @@
-<p>
-  schedule-date works!
-</p>
+<div class="schedule-today">
+  <div class="schedule-today__box" *ngFor="let schedule of scheduleData">
+    <span class="schedule-today__time">{{ schedule.time }}</span>
+    <span class="schedule-today__description">{{ schedule.description}}</span>
+  </div>
+</div>

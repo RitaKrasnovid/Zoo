@@ -1,15 +1,18 @@
 @import '../../assets/styles/variables.scss';
 
 .schedule {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(../../assets/image/bg3.png) no-repeat;
+  background-position-x: 100%;
 
   &__nav {
     width: 500px;
     display: flex;
     justify-content: center;
-    border-bottom: 2px solid #808080;
+    border-bottom: 2px solid $green;
   }
 
   &__date {
@@ -31,8 +34,13 @@
     color: $font-secondary-color;
   }
 
-  &__image {
-    position: absolute;
-    right: 0;
+  &__title {
+    text-shadow: 1px 1px 5px $font-primary-color;
+    font-size: 35px;
+
+    &--green {
+      color: $green;
+      text-transform: uppercase;
+    }
   }
 }
