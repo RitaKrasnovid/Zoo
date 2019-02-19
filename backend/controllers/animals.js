@@ -1,6 +1,6 @@
 const models = require('../models');
 
-const Animal = models.Animal;
+const Animal = models.Animals;
 const Image = models.Images;
 
 const create = (req, res) => {
