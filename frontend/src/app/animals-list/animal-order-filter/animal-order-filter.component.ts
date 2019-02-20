@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { animalsOrders } from '../../constants/animals-orders';
 
 @Component({
   selector: 'app-animal-order-filter',
@@ -8,10 +9,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class AnimalOrderFilterComponent implements OnInit {
   @Output() filtering: EventEmitter<any> = new EventEmitter<any>();
   @Input() title: string;
-
-  public orders = [
-    'mammals', 'birds', 'reptiles', 'fish', 'amphibia',
-  ];
+  public orders = animalsOrders;
 
   constructor() { }
 
