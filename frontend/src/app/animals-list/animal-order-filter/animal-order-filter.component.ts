@@ -10,7 +10,7 @@ export class AnimalOrderFilterComponent implements OnInit {
   @Input() title: string;
 
   public orders = [
-    'mammals', 'birds', 'reptiles', 'fish', 'amphibia', 'Carnivora'
+    'mammals', 'birds', 'reptiles', 'fish', 'amphibia',
   ];
 
   constructor() { }
