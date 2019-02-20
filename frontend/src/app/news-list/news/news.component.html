@@ -3,6 +3,7 @@
     <h3 class="news__title">{{news.title}}</h3>
     <div class="news__description">
       <img src="../../../assets/image/default.png" class="news__image">
+      <div>{{news.description | truncate:[10]}}</div>
       <a href="#" class="news__link">More details</a>
     </div>
   </div>

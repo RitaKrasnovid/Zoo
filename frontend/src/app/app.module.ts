@@ -14,6 +14,7 @@ import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filte
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NewsListComponent } from './news-list/news-list.component';
 import { NewsComponent } from './news-list/news/news.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 const appRoutes: Routes = [
   {
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
     AnimalFilterComponent,
     NewsListComponent,
     NewsComponent,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,
