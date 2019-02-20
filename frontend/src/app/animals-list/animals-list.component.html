@@ -1,6 +1,6 @@
 <div class="content" *ngIf="animals$ | async; let animals">
   <app-animal-name-filter (filtering)="filterByName($event)" [countResult]="animals.length"></app-animal-name-filter>
-  <app-animal-order-filter (filtering)="filterByOrder($event)" [title]="orderTitle"></app-animal-order-filter>
+  <app-animal-class-filter (filtering)="filterByClass($event)" [title]="animalClassTitle"></app-animal-class-filter>
   <div class="animals-list">
     <ng-container *ngFor="let animal of animals">
       <app-animal [animal]="animal"></app-animal>

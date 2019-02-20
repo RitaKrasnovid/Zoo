@@ -1,6 +1,6 @@
 @import '../../../assets/styles/variables.scss';
 
-.animal-order-filter {
+.animal-class-filter {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -13,12 +13,12 @@
     line-height: 50px;
   }
 
-  &__group-orders {
+  &__group-animal-class {
     display: flex;
     justify-content: center;
   }
 
-  &__order {
+  &__animal-class {
     font-size: 20px;
     color: $primary-color;
     margin: 20px;
