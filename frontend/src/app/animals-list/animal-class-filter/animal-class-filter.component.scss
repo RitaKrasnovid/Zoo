@@ -1,0 +1,34 @@
+@import '../../../assets/styles/variables.scss';
+
+.animal-class-filter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  &__title {
+    height: 50px;
+    background: $primary-color;
+    margin: 0;
+    text-align: center;
+    line-height: 50px;
+  }
+
+  &__group-animal-class {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__animal-class {
+    font-size: 20px;
+    color: $primary-color;
+    margin: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

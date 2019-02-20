@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    order: {
+    class: {
       type: DataTypes.STRING,
       allowNull: false,
     },

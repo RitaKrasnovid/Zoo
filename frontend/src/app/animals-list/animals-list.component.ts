@@ -1,7 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { AnimalApiService } from '../services/animal.service';
 import { Animal } from '../models';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-animals-list',
@@ -11,18 +13,33 @@ import { Observable } from 'rxjs';
 })
 export class AnimalsListComponent implements OnInit {
   public animals$: Observable<Animal[]>;
-  countResult: number;
+  public countResult: number;
+  public animalClassTitle = 'animals';
 
-  constructor(private apiService: AnimalApiService) { }
+  constructor(
+    private animalApiService: AnimalApiService,
+    private readonly router: Router,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
-    this.animals$ = this.apiService.getAnimals();
+    this.animals$ = this.animalApiService.getAnimals();
   }
 
   filterByName(filterValue) {
+    const param = 'search';
+
     if (filterValue.search_type.type === 'contains') {
-      this.animals$ = this.apiService.filterByNameContainsValue(filterValue.search_value);
-     }
+      this.router.navigate(['/animals'], { queryParams: { search: filterValue.search_value } });
+      this.animals$ = this.animalApiService.filter(param, filterValue.search_value);
+    }
   }
 
+  filterByClass(value: string) {
+    const param = 'class';
+
+    this.animalClassTitle = value;
+    this.router.navigate(['/animals'], { queryParams: { order: value } });
+    this.animals$ = this.animalApiService.filter(param, value);
+  }
 }

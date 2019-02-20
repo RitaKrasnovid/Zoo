@@ -2,11 +2,11 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-animal-filter',
-  templateUrl: './animal-filter.component.html',
-  styleUrls: ['./animal-filter.component.scss'],
+  selector: 'app-animal-name-filter',
+  templateUrl: './animal-name-filter.component.html',
+  styleUrls: ['./animal-name-filter.component.scss'],
 })
-export class AnimalFilterComponent implements OnInit {
+export class AnimalNameFilterComponent implements OnInit {
   @Input() countResult: number;
   @Output() filtering: EventEmitter<any> = new EventEmitter<any>();
 

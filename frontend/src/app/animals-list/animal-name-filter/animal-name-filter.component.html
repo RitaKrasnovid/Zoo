@@ -1,0 +1,23 @@
+<div class="animal-name-filter">
+  <form [formGroup]="filter" (ngSubmit)="onSubmit()">
+    <select class="animal-name-filter__select animal-name-filter__select-type" formControlName="filter_type">
+      <option disabled class="animal-name-filter__item--disabled">Choose filter type</option>
+      <option class="animal-name-filter__item" *ngFor="let type of filterTypes" [ngValue]="type">
+        {{type.value}}
+      </option>
+    </select>
+    <select class="animal-name-filter__select" formControlName="search_type">
+      <option disabled class="animal-name-filter__item--disabled">Choose search type</option>
+      <option class="animal-name-filter__item" *ngFor="let type of searchTypes" [ngValue]="type">
+        {{type.value}}
+      </option>
+    </select>
+    <input type="text" class="animal-name-filter__search-text" placeholder="Enter value" formControlName="search_value">
+    <button type="submit" class="animal-name-filter__button">Search</button>
+  </form>
+  <p class="animal-name-filter__results" *ngIf="countResult > 0; else notFoundAnimals">Results for "<b> {{countResult}} </b>" animals</p>
+</div>
+
+<ng-template #notFoundAnimals>
+    <p class="animal-name-filter__not-found">Animals not Found</p>
+</ng-template>

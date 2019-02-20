@@ -1,0 +1,10 @@
+<div class="animal-class-filter">
+  <h3 class="animal-class-filter__title">All {{ title }} of our ZOO</h3>
+  <div class="animal-class-filter__group-animal-class">
+    <span class="animal-class-filter__animal-class"
+      *ngFor="let animalClass of animalsClasses"
+      (click)="filterByClass(animalClass)">
+      {{animalClass}}
+  </span>
+  </div>
+</div>

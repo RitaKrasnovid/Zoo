@@ -1,7 +1,7 @@
 @import '../../assets/styles/variables.scss';
 
 .content {
-  background: url(../../assets/image/forest.jpg) no-repeat;
+  background: #ffffff url(../../assets/image/forest.jpg) no-repeat;
   min-width: 900px;
   display: flex;
   flex-direction: column;
@@ -18,3 +18,4 @@
   background: rgba(0, 0, 0, 0.5);
   padding: 15px;
 }
+

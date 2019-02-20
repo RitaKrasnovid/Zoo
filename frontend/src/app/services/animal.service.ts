@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -9,7 +9,7 @@ import { Animal } from '../models';
   providedIn: 'root'
 })
 export class AnimalApiService {
-  baseURL = environment.baseUrl + '/api/animals/';
+  baseURL = environment.baseUrl + '/api/animals';
   animals: Animal[];
 
   constructor(private http: HttpClient) { }
@@ -18,8 +18,12 @@ export class AnimalApiService {
     return this.http.get<Animal[]>(this.baseURL, {responseType: 'json'});
   }
 
-  filterByNameContainsValue(value: string) {
-    return this.http.get<Animal[]>(this.baseURL + value, {responseType: 'json'});
+  filter(param, value) {
+    const options = {
+      params: new HttpParams()
+        .set(param, value)
+    };
+    return this.http.get<Animal[]>(this.baseURL, options);
   }
 
 }

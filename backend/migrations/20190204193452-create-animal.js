@@ -11,7 +11,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      order: {
+      class: {
         type: Sequelize.STRING,
         allowNull: false,
       },

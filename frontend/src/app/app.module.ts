@@ -10,8 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { CommonNewsComponent } from './home/common-news/common-news.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
-import { AnimalFilterComponent } from './animals-list/animal-filter/animal-filter.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AnimalNameFilterComponent } from './animals-list/animal-name-filter/animal-name-filter.component';
+import { AnimalClassFilterComponent } from './animals-list/animal-class-filter/animal-class-filter.component';
 
 const appRoutes: Routes = [
   {
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     CommonNewsComponent,
     ScheduleComponent,
     HeaderComponent,
-    AnimalFilterComponent
+    AnimalNameFilterComponent,
+    AnimalClassFilterComponent
   ],
   imports: [
     BrowserModule,
